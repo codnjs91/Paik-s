@@ -1,0 +1,273 @@
+@charset "utf-8";
+
+/*           기본 스타일           */
+* { 
+  margin: 0; padding: 0; box-sizing: border-box; 
+  font-family: "Do Hyeon", sans-serif; 
+  font-style: normal; letter-spacing: 1px;
+}
+a { text-decoration: none; color: #000; }
+
+/* 브라우저 색 설정 */
+html, body { background-color:  #E6E7E8; }
+
+
+/*          헤더          */
+header {
+  width: 100%; height: 162.5px;
+}
+
+header>h1 {
+  width: 1300px;
+  margin: auto;
+}
+header>h1>a {
+  display: inline-block;
+  width: 162.5px; height: 162.5px;
+  padding: 55px 5px;
+  background-color: #001F60;
+}
+header>h1>a>img {
+  width: 100%; height: 100%;
+}
+
+
+/*          메인 컨텐츠 박스          */
+article {
+  width: 1300px;
+  margin: auto;
+  display: flex;
+}
+
+/* 왼쪽 컨텐츠 */
+article #left_box {
+  width: 50%; height: 1000px;
+}
+/* 메인 텍스트 */
+#left_box .main_text {
+  width: 100%; height: 200px;
+  text-align: right;
+  padding: 30px 20px;
+  font-size: 36px;
+}
+/* 유튜브 영상 */
+#left_box .video {
+  width: 100%; height: 500px;
+  background-color: #999;
+}
+
+/* 약력 */
+#left_box .intro {
+width: 100%; height: 300px;
+}
+#left_box .intro h1 {
+  padding-top: 40px;
+  font-size: 40px;
+  padding-left: 20px;
+}
+#left_box .intro>ul {
+  padding: 20px 40px;
+}
+#left_box .intro>ul>li {
+  line-height: 30px;
+  font-family: "sans-serif";
+  color: #444444;
+}
+
+/* 오른쪽 컨텐츠 */
+article #right_box {
+  width: 50%; height: 1000px;
+  background-color: #fff;
+}
+
+/* 메뉴를 감싸는 박스 */
+#right_box .nav_box {
+  width: 100%; height: 200px;
+  display: flex;
+}
+
+/* 3개 박스 */
+#right_box .nav_box article {
+  width: calc(100% / 3); height: 100%;
+}
+
+
+/* 타이틀 */
+.nav_box .title {
+  font-size: 40px;
+  padding: 70px 17px;
+  color: #fff;
+  background-color: #001F60;
+}
+
+
+/* 타이틀이미지 */
+.nav_box .title_img {
+  background-color: #fff;
+}
+.nav_box .title_img img {
+  height: 100%;
+  margin: auto;
+}
+
+
+/*          메뉴          */
+#right_box .mobile_btn {
+  position: relative;
+  background-color: #001F60;
+}
+/* 햄버거 체크박스 */
+input[id="hamburger"] {
+  display: none;
+}
+/* 햄버거 막대 전체 크기 */
+input[id="hamburger"] + label {
+  display: block;
+  width: 70px; height: 50px;
+  position: relative;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+/* 햄버거 막대 크기 */
+input[id="hamburger"] + label span {
+  display: block;
+  position: absolute;
+  width: 100%; height: 9px;
+  border-radius: 30px;
+  background: #fff;
+  transition: all 0.35s;
+}
+input[id="hamburger"] + label span:nth-child(1) {
+  top: 0;
+}
+input[id="hamburger"] + label span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+input[id="hamburger"] + label span:nth-child(3) {
+  bottom: 0;
+}
+input[id="hamburger"]:checked + label {
+  z-index: 1;
+}
+input[id="hamburger"]:checked + label span {
+  background: #fff;
+}
+input[id="hamburger"]:checked + label span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+input[id="hamburger"]:checked + label span:nth-child(2) {
+  opacity: 0;
+}
+input[id="hamburger"]:checked + label span:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+div[class="sidebar"] {
+  /* width: 150px; height: 200px; */
+  width: 100%; height: 200px;
+  background: #ccdcff73;
+  position: absolute;
+  /* top: 17.1%; left: 76.5%; */
+  top: 100%; left: 0;
+  z-index: 1;
+  transition: all 0.35s;
+  opacity: 0;
+}
+/* 메뉴 박스 위치 */
+input[id="hamburger"]:checked + label + div {
+  /* left: 84.2%; top: 17.1%; */
+  top: 100%; left: 0;
+  opacity: 1;
+}
+.nav_mobile {
+  list-style: none;
+  /* position: absolute; */
+  width: 100%;
+}
+.sidebar li a{
+  display:block;
+  width: 100%; height: 40px;
+  text-align: center; line-height: 40px;
+  transition: all 0.4s;
+}
+/* 메뉴에 마우스를 올렸을때 */
+.sidebar li a:hover, .sidebar ul li:hover a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0; margin: 0;
+  border: 0;
+}
+
+
+/*          CEO 인사말          */
+#right_box .ceo_text {
+  padding: 50px;
+  font-family: "sans-serif";
+}
+#right_box .ceo_text h1 {
+  display: inline-block;
+  font-size: 30px;
+  margin-bottom: 30px;
+  border-bottom: 4px solid #c4c4c4;
+}
+#right_box .ceo_text h4 {
+  font-family: "sans-serif";
+  font-weight: bold;
+}
+#right_box .ceo_text span {
+  display: block;
+  margin-top: 40px;
+  text-align: right;
+}
+
+
+  /*          푸터          */
+footer {
+  width: 100%; height: 162.5px;
+  color: #fff;
+  background-color: #001F60;
+}
+
+  footer #footer_box {
+    width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #footer_box h1 {
+    width: 162.5px; height: 162.5px;
+    padding: 55px 5px;
+    background-color: #001F60;
+    /* border: #fff 1px solid; */ 
+  }
+  #footer_box h1 img {
+    width: 100%; height: 100%;
+  }
+  
+  #footer_box p {
+    height: 162.5px;
+    line-height: 162.5px;
+    /* border: #fff 1px solid; */
+  }
+  
+  #footer_box ul {
+    display: flex;
+    justify-content: space-evenly;
+    width: 35%;
+    padding: 71px 0;
+    list-style: none;
+    /* border: #fff 1px solid; */
+  }
+  #footer_box li {
+    width: 200px; height: 20px;
+    text-align: center; line-height: 20px;
+    border-right: 1px solid #fff;
+    /* border: #fff 1px solid; */
+  }
+  #footer_box li:last-child {
+    border-right: 0;
+  }
